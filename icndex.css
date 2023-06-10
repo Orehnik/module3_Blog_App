@@ -1,0 +1,83 @@
+body{
+    margin-left: 300px ;
+}
+.post-title-input {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width:  300px;
+}
+
+.post-text-input {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width:  300px;
+    resize: none;
+}
+
+.new-post-btn {
+    box-sizing: border-box;
+    width:  300px;
+    height: 30px;
+    color: white;
+    background-color: rgb(0, 162, 255);
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+}
+.validationMessage {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: red;
+}
+.validationMessage_hidden {
+    display: none;
+}
+
+.validationMessageText {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: red;
+}
+.validationMessageText_hidden {
+    display: none;
+}
+
+
+
+.post {
+    width: 300px;
+    margin-bottom: 20px;
+    display: block;
+    word-wrap:break-word;
+    margin-top: 40px;
+    padding: auto;
+}
+
+.post__date {
+    color: blue;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.post__text {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+}
+
+.post__title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+input::placeholder, textarea::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: gray;
+    font-size: 17px;
+}
