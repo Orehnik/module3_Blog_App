@@ -17,6 +17,9 @@ postBtn.addEventListener('click', function() {
     addPost(postFromUser);
 
     renderPosts();
+
+    postTitleInputNode.value = "";
+    postTextInputNode.value = "";
 });
 
 postTitleInputNode.addEventListener("input", validation);
