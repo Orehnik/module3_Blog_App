@@ -55,7 +55,7 @@ function validation  () {
         postBtn.disabled = true;
     };
 
-    if (textlen === 0 || titlelen === 0){
+    if (textlen === 0 || titlelen === 0 || textlen > TEXT_VALIDATION_LIMIT || titlelen > TITTLE_VALIDATION_LIMIT){
         postBtn.disabled = true
     }
 };
