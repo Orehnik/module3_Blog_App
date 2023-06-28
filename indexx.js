@@ -20,6 +20,8 @@ postBtn.addEventListener('click', function() {
 
     postTitleInputNode.value = "";
     postTextInputNode.value = "";
+    validationMessage.innerText = "";
+    validationMessageText.innerText = "";
 });
 
 postTitleInputNode.addEventListener("input", validation);
