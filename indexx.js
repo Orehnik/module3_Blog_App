@@ -1,7 +1,7 @@
 const posts = [];
 
 const TITTLE_VALIDATION_LIMIT = 100;
-const TEXT_VALIDATION_LIMIT = 200;
+const TEXT_VALIDATION_LIMIT = 2000000000000;
 
 
 const postTitleInputNode = document.getElementById('js-post-title-input');
@@ -22,14 +22,15 @@ postBtn.addEventListener('click', function() {
     postTextInputNode.value = "";
     validationMessage.innerText = "";
     validationMessageText.innerText = "";
+    postBtn.disabled = true
 });
 
 postTitleInputNode.addEventListener("input", validation);
 postTextInputNode.addEventListener("input", validation);
 
 function validation  () {
-    const titlelen = postTitleInputNode.value.length;
-    const textlen = postTextInputNode.value.length;
+    const titlelen = postTitleInputNode.value.trim().length;
+    const textlen = postTextInputNode.value.trim().length;
 
     if (titlelen <= TITTLE_VALIDATION_LIMIT) {
         validationMessage.innerText = `Осталось ${TITTLE_VALIDATION_LIMIT-titlelen} символов`;
@@ -45,8 +46,13 @@ function validation  () {
         
     };
 
-     if (textlen<=TEXT_VALIDATION_LIMIT) {
-        validationMessageText.innerText = `Осталось ${TEXT_VALIDATION_LIMIT-textlen} символов`;
+    //  if (textlen<=TEXT_VALIDATION_LIMIT) {
+    //     validationMessageText.innerText = `Осталось ${TEXT_VALIDATION_LIMIT-textlen} символов`;
+    //     validationMessageText.classList.remove("validationMessageText_hidden");
+    //     postBtn.disabled = false
+
+    if (textlen<=TEXT_VALIDATION_LIMIT) {
+        validationMessageText.innerText = ``;
         validationMessageText.classList.remove("validationMessageText_hidden");
         postBtn.disabled = false
         
@@ -63,8 +69,8 @@ function validation  () {
 };
 
 function getPostFromUser() {
-    const title = postTitleInputNode.value;
-    const text = postTextInputNode.value;
+    const title = postTitleInputNode.value.trim();
+    const text = postTextInputNode.value.trim();
 
     return {
         title: title,
@@ -75,8 +81,10 @@ function getPostFromUser() {
 function addPost({title, text}) {
     const currntDate = new Date();
     const date = `${currntDate.toLocaleDateString()} ${currntDate.toLocaleTimeString()}`;
+    // const dateNow = Math.floor(Date.now() / 1000);
+    // console.log(dateNow);
 
-    posts.push({
+    posts.unshift({
         date,
         title,
         text
