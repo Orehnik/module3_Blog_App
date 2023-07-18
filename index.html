@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+
+    <link rel="stylesheet" href="icndex.css">
+</head>
+<body> 
+
+    <div class="row">
+        <div class="col">
+            <h2>Новый пост</h2>
+            
+            <input
+                id="js-post-title-input" 
+                class="post-title-input" 
+                placeholder="Заголовок"
+                type="text"
+            >
+            <div 
+            id="validationeMessage" 
+            class="validationMessage validationMessage_hidden"
+            >
+           Длинна заголовка не должна привышать 100 символов
+            </div>  
+            <textarea 
+                id="js-post-text-input" 
+                class="post-text-input" 
+                placeholder="Напиши Пост"
+                type="text"
+                rows="8"
+                
+            ></textarea>
+            <div 
+            id="validationeMessageText" 
+            class="validationMessageText validationMessageText_hidden"
+            >
+           Длинна заголовка не должна привышать 100 символов
+            </div>
+
+            <button id="btn-post" disabled class="js-new-post-btn new-post-btn">
+                Опубликовать
+            </button>
+
+        </div>
+    <div class = "col">
+        <h2>Лента</h2>
+    <div class="blog_box">
+        <div
+            id="js-posts"
+            class="posts">
+            Лента пуста...
+        </div>
+    </div>
+    </div>
+</div>
+
+
+    <script src="index.js"></script> 
+</body>
+</html>
